@@ -1,0 +1,55 @@
+<h1>MONGODB - SOA</h1>
+<section class="insert">
+    <h3>Agregar Subalterno</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="titulo">Titulo</label>
+            <input type="text" id="titulo" name="titulo">
+        </div>
+        <div class="input">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa">
+        </div>
+        <div class="input">
+            <label for="subalterno">Subalterno</label>
+            <input type="text" id="subalterno" name="subalterno">
+        </div>
+        <button type="submit">AGREGAR</button>
+    </form>
+</section>
+<section class="get">
+    <h3>Mostrar Subalternos</h3>
+    <a href="/get-data">Mostrar</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>Titulo: {{ this.titulo }}</div>
+                <div>Empresa: {{ this.empresa }}</div>
+                <div>Subalterno: {{ this.subalterno }}</div>
+                <div>ID: {{ this._id }}</div> <!-- OBJECT_ID -->
+            </article>
+        {{/each}}
+    </div>
+</section>
+<section class="update">
+    <h3>Actualizar Subalterno</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="titulo">Titulo</label>
+            <input type="text" id="titulo" name="titulo">
+        </div>
+        <div class="input">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa">
+        </div>
+        <div class="input">
+            <label for="subalterno">Subalterno</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <button type="submit">ACTUALIZAR</button>
+    </form>
+</section>
